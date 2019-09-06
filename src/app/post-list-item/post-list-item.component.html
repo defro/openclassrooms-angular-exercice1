@@ -4,18 +4,27 @@
   'list-group-item-success': post.loveIts > 0
 }">
   <div class="d-flex w-100 justify-content-between">
-    <h5 class="mb-1">{{ post.title }}</h5>
-    <small>{{ post.created_at | date: 'dd/MM/yyyy, HH:mm' }}</small>
+    <h5 class="mb-1">
+      {{ post.title }}
+      <span [ngClass]="{
+          'badge': true,
+          'badge-pill': true,
+          'badge-primary': post.loveIts === 0,
+          'badge-danger': post.loveIts < 0,
+          'badge-success': post.loveIts > 0
+        }">
+        {{ post.loveIts }} love it
+      </span>
+    </h5>
+    <small>{{ post.createdAt | date: 'dd/MM/yyyy, HH:mm' }}</small>
   </div>
   <p class="mb-1">{{ post.content }}</p>
-  <p>
+  <div class="btn-group btn-group-xs" role="group">
     <button type="button"
-            class="btn btn-success"
-            (click)="loveIt()"
-    >Love it</button>
+            class="btn btn-success btn-xs"
+            (click)="onLoveIt()">Love it</button>
     <button type="button"
-            class="btn btn-danger"
-            (click)="dontLoveIt()"
-    >Don't love it</button>
-  </p>
+            class="btn btn-danger btn-xs"
+            (click)="onDontLoveIt()">Don't love it</button>
+  </div>
 </li>

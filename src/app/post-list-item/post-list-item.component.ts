@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Post} from '../models/post.model';
 
 @Component({
   selector: 'app-post-list-item',
@@ -6,19 +7,19 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./post-list-item.component.scss']
 })
 export class PostListItemComponent implements OnInit {
-  @Input() post;
+  @Input() post: Post;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  loveIt() {
-    this.post.loveIts += 1;
+  onLoveIt() {
+    this.post.loveIts++;
   }
 
-  dontLoveIt() {
-    this.post.loveIts -= 1;
+  onDontLoveIt() {
+    this.post.loveIts--;
   }
 
 }
