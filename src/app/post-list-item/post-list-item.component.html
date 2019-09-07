@@ -4,27 +4,38 @@
   'list-group-item-success': post.loveIts > 0
 }">
   <div class="d-flex w-100 justify-content-between">
-    <h5 class="mb-1">
+    <h4 class="mb-1">
       {{ post.title }}
-      <span [ngClass]="{
-          'badge': true,
-          'badge-pill': true,
-          'badge-primary': post.loveIts === 0,
-          'badge-danger': post.loveIts < 0,
-          'badge-success': post.loveIts > 0
-        }">
-        {{ post.loveIts }} love it
-      </span>
-    </h5>
-    <small>{{ post.createdAt | date: 'dd/MM/yyyy, HH:mm' }}</small>
+      <small class="pull-right">{{ post.createdAt | date: 'dd/MM/yyyy, HH:mm' }}</small>
+    </h4>
   </div>
+
   <p class="mb-1">{{ post.content }}</p>
+
+  <span [ngClass]="{
+        'label': true,
+        'label-primary': post.loveIts === 0,
+        'label-danger': post.loveIts < 0,
+        'label-success': post.loveIts > 0
+      }">
+    {{ post.loveIts }}
+    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+  </span>
+
   <div class="btn-group btn-group-xs" role="group">
     <button type="button"
-            class="btn btn-success btn-xs"
-            (click)="onLoveIt()">Love it</button>
+            class="btn btn-default btn-xs"
+            (click)="onLoveIt()">
+      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Love it
+    </button>
     <button type="button"
-            class="btn btn-danger btn-xs"
-            (click)="onDontLoveIt()">Don't love it</button>
+            class="btn btn-default btn-xs"
+            (click)="onDontLoveIt()">
+      <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> Don't love it
+    </button>
   </div>
+
+  <button type="button"
+          class="btn btn-danger btn-xs pull-right"
+          (click)="onDelete()">Delete it</button>
 </li>

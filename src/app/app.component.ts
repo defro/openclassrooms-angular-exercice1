@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Post} from './models/post.model';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -7,28 +7,18 @@ import {Post} from './models/post.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  posts: Post[] = [
-    new Post(
-      'Post neutre',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus urna sed facilisis euismod.',
-      0,
-      new Date('2010-04-24T03:30:00')
-    ),
-    new Post(
-      'Post adoré',
-      'Vestibulum laoreet varius nibh vel hendrerit. Fusce feugiat fermentum ipsum, posuere ultrices sem cursus eget.',
-      2,
-      new Date('2019-03-23T20:49:00')
-    ),
-    new Post(
-      'Post detesté',
-      'Nunc tempor ante sit amet sapien pharetra, non varius lectus faucibus. Aliquam cursus elit non nulla consequat pulvinar.',
-      -2
-    )
-  ];
 
   constructor() {
-    //console.log(this.posts);
+    const config = {
+      apiKey: 'AIzaSyBBU3puoWkpjTRHOLaePPqhiETp4t-6nik',
+      authDomain: 'openclassrooms-ng-blog.firebaseapp.com',
+      databaseURL: 'https://openclassrooms-ng-blog.firebaseio.com',
+      projectId: 'openclassrooms-ng-blog',
+      storageBucket: '',
+      messagingSenderId: '742165422668',
+      appId: '1:742165422668:web:b8fe4fdd62965147ff0ae9'
+    };
+    firebase.initializeApp(config);
   }
 
 }
