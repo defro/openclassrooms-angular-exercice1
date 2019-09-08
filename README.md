@@ -1,27 +1,14 @@
-# Exercice1
+# Cours sur Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
+Ce dépôt contient mon travail pour la réalisation des 2 exercices du cours ["Développez des applications Web avec Angular"](https://openclassrooms.com/fr/courses/4668271-developpez-des-applications-web-avec-angular) de [OpenClassRooms](https://openclassrooms.com).
 
-## Development server
+## Mes 2 exercices
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Chacun d'eux correspondent à une release (tag), libre à vous de télécharger la version qui vous intéresse.
 
-## Code scaffolding
+## Installation et deploiement
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ - Depuis un terminal de commande, naviguez jusqu'à la racin de ce projet
+ - Executer `npm install`
+ - Executer `ng serve`
+ - Depuis un navigateur, visiter la page `http://localhost:4200/`
