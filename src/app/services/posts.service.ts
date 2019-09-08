@@ -34,19 +34,6 @@ export class PostsService {
     });
   }
 
-  getOne(id: number) {
-    return new Promise((resolve, reject) => {
-      firebase.database().ref('/posts/' + id).once('value').then(
-        (data: DataSnapshot) => {
-          resolve(data.val());
-        },
-        (error) => {
-          reject(error);
-        }
-      );
-    });
-  }
-
   saveAll() {
     firebase.database().ref('/posts').set(this.posts);
   }
